@@ -1,7 +1,7 @@
-
+require('dotenv').config();
 const mongoose = require('mongoose')
 
-const url = `mongodb+srv://carrot269:%23goku260901@cluster0.es6fem4.mongodb.net/`;
+const url = process.env.url;
 
 const connectionParams={
     useNewUrlParser: true,
