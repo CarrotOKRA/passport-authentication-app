@@ -7,7 +7,7 @@ const app = express();
 const db = require('./config/keys').mongoURI;
 
 // connect to MongoDB
-console.log(db);
+// console.log(db);
 mongoose.connect(db, {
 	useNewUrlParser: true, 
 })
@@ -17,6 +17,9 @@ mongoose.connect(db, {
 // EJS
 app.use(expressLayouts);
 app.set('view engine', 'ejs');
+
+//bodyparser
+app.use(express.urlencoded({extender:false})); 
 
 // Routes
 app.use('/', require('./routes/index'));
